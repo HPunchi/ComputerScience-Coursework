@@ -1,4 +1,0 @@
-{
-    "watch": ["index.js", ".env", "./views", "./routes", "./middleware"],
-    "ext": "js, ejs, css"
-}
