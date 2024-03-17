@@ -1,0 +1,2 @@
+[10:32] - Alert: Motion was detected.
+[11:21] - Alert: Motion was detected.

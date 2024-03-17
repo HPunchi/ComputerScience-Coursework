@@ -1,0 +1,76 @@
+.mainPage{
+    background-color: white;
+}
+.button{
+    background-color: green;
+}
+.svgLogo{
+    color: black;
+}
+.webcamImage{
+    border: none;
+    border-radius: 2px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.uecButton{
+    color: #fff;
+    background-color: #00a2ff;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.roomLabel{
+    font-size: 40px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 5px;
+    color: black;
+}
+
+.pageTitle{
+    font-size: 40px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 5px;
+    color: black;
+}
+.uecLabel{
+    font-size: 24px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 10px;
+    color: black;
+}
+
+.statusLabelTrue{
+    color: #fff;
+    background-color: #ff0000;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.uecInput{
+    font-size: 22px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    border: 1px solid black;
+    margin-left: 15px;
+    color: rgb(104, 104, 104);
+}
+.statusLabelFalse{
+    color: #ffffff;
+    background-color: #22ff00;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;    
+    font-family: 'Trebuchet MS', sans-serif;
+    margin-left: 15px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

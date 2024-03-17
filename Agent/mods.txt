@@ -1,0 +1,8 @@
+pip install matplotlib //used for graphing and data presentation
+pip install dotenv //used to access .ENV variables
+pip install opencv-python //used to get OpenCV functions/attributes
+pip install PyQt5 //used for GUI
+
+
+
+
