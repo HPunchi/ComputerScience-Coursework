@@ -1,0 +1,44 @@
+.centrePage{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    max-width: 400px;
+}
+
+#l{ /* logo positioning */
+    width: 350px;
+    position: relative;
+    transform: translate(-10px, 0px);
+}
+
+#homeButton{
+    position: relative; 
+}
+
+@media only screen and (max-width: 767px){ /* used for mobile displays */
+    #l{
+        left: 50%;
+        transform: translate(-50%, 0%);
+    }
+}
+#titleLabel{ /* define style and positioning for title */
+    margin-bottom: 15px;
+    z-index: 10;
+    position: relative;
+    transform: translate(0px, -10px);
+    white-space: initial;
+}
+#textLabel{ /* spaces text from bottom */
+    margin-bottom: 15px;
+}
+
+#mainCont{
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 50px;
+}

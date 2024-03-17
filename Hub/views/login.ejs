@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/media/logo/t-icon.png"> <!--webpage icon-->
+    <link rel="stylesheet" href="css/global.css"> <!-- import CSS scripts-->
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/global.js" defer></script> <!--import client JS scripts-->
+    <script src="js/login.js" defer></script>
+    <title>HomeShield Hub</title> <!-- page title -->
+</head>
+<body>
+    <div class="centreXY ttb">  <!-- main central DIV -->
+        <object data="media/logo/svgs/zoomed-text+icon.svg" class="midPageLogo"> </object> <!-- logo -->
+        <h1 class="pageHeading">Login</h1> <!-- page heading -->
+        <div id="emailEntry" class="ttb"> <!-- email address input -->
+            <label id="emailLbl" class="inputLabelStyle">Email Address:</label>
+            <input id="emailInp" onkeypress="switchPassword(event)" class="inputFieldStyle" name="email">  
+        </div>
+        <div id="passwordEntry" class="ttb"> <!-- password input-->
+            <label id="passwordLbl" class="inputLabelStyle">Password:</label>
+            <input id="passwordInp" onkeypress="handleKeyPress(event)" class="inputFieldStyle" type="password" name="password">
+        </div>
+        <!--event binded inputs to move focus next input when enter is pressed. see JS code-->
+        <div class="ttb"> <!--redirect button to sign up page and submit button to proceed login -->
+            <button id="createAccountBtn" class="linkButtonStyle" onclick="createAccount()">Create an account</button>
+            <button id="submitBtn" type="submit" class="mainButtonStyle" onclick="login()">Submit</button>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

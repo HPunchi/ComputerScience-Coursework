@@ -1,0 +1,96 @@
+<label class="pageHeading vSpace">Devices</label> <!-- page heading with size 1.6rem -->
+
+<div id="devicesList" class="vSpace">
+    
+    <div class="container"> <!-- main parent container div -->
+        <% for( let i = 0; i < devices.length; i++ ) { %> <!-- iterate through each device in devices array-->
+            <div id="<%= devices[i].deviceID %>" class="box"> 
+                <button id="<%= devices[i].deviceID %>SB" data-state="unselected" data-value="<%= devices[i].deviceID %>" onclick="toggleSelect(this.dataset.value, this.dataset.state)" class="select-button"></button>
+                <!-- represents the select button in the top right corner valued its device ID & binded to toggle set-->
+                <div class="iconSpaceL ttb"> <!-- left shifted div to position child nodes top to bottom-->
+                    <label class="deviceIcon"><i class="fa-solid <%= devices[i].iconType %>"></i></label>
+                    <!-- iconType attribute in device object contains font awesome identifier for appropiate device type -->
+                    <label title="Location" class="dPadLocation"><%= devices[i].location %></label>
+                    <!-- load device location into label -->
+                    <label title="Name" class="dPadName"><%= devices[i].name %></label>
+                    <!-- load device name into label -->
+                    <label title="Type"><%= devices[i].type %></label>
+                    <!-- load worded device type into label -->
+                    <label title="Device ID" class="dType">#<%= devices[i].deviceID %></label>
+                    <!-- load device ID into final label below with a hashtag in front to show it is an ID -->
+                    <div class="dIcons"> <!-- div to show visibility and device lock icons in a row at the bottom of the pad -->
+                        <% if (devices[i].visibility) { %>
+                            <label title="Visibility on" class="deviceStat visibilityStatus"><i class="fa-solid fa-eye"></i></label>
+                            <!-- load eye icon if visibility is on -->
+                        <% } else { %>
+                            <label title="Visibility off" class="deviceStat visibilityStatus"><i class="fa-solid fa-eye-slash"></i></label>
+                            <!-- load eye strikethrough icon if visibility is off -->
+                        <% } %>
+                        <% if (devices[i].deviceLocked) { %>
+                            <label title="Device locked" class="deviceStat lockStatus"><i class="fa-solid fa-lock"></i></label>
+                            <!-- load lock icon if device locking is enabled -->
+                        <% } else { %>
+                            <label title="Device not locked" class="deviceStat lockStatus"><i class="fa-solid fa-lock-open"></i></label>
+                            <!-- load unlock icon if device locking is disabled -->
+                        <% } %>
+                    </div>
+
+
+                </div>
+                
+            </div>
+        <% } %>
+    </div>
+
+    <!--
+    <label class="gHeading vSpace">Your devices:</label>
+    
+    <table id="deviceTable">
+        <tr>
+            <th class="heading">Device ID</th>
+            <th class="heading">Location</th>
+            <th class="heading">Name</th>
+            <th class="heading">Type</th>
+            <th class="heading">Visibility</th>
+            <th class="heading">Device Locked</th>
+        </tr>
+
+        <% devices.forEach(device => { %>
+            <tr class="tableRow" id="<%= device.deviceID %>">
+                <td class="dataCell"><%= device.deviceID %></td>
+                <td class="dataCell"><%= device.location %></td>
+                <td class="dataCell"><%= device.name %></td>
+                <td class="dataCell"><%= device.type %></td>
+                <td class="dataCell"><%= (device.visibility === 1) %></td>
+                <td class="dataCell"><%= (device.deviceLocked === 1) %></td>
+                
+                <td class="finalCell">
+                    <button class="statusLabel actionButton" 
+                    id="<%= device.deviceID %>"
+                    onclick="selectRow(this)">
+                    </button>
+                </td>
+            </tr>
+        <% }) %>
+        
+
+    </table>
+-->  
+</div> <!-- area where device pads are loaded -->
+
+
+
+<div id="buttonsDiv" class="btnRow"> <!-- row of buttons -->
+    <button id="addDeviceBtn"
+    class="standardButton"
+    onclick="location.href='/devices/add';"> <!-- redirect to add device page -->
+    Add Device<i class="iconSpaceL fa-solid fa-plus"></i></button> <!-- button to add a new device -->
+    <button id="removeDeviceBtn"
+    class="standardButton"
+    onclick="removeDevices()"> <!-- remove devices JS function launched -->
+    Remove Device<i class="iconSpaceL fa-solid fa-minus"></i></button> <!-- button to remove selected devices -->
+</div>
+
+<script src="/js/devices.js" defer></script> <!-- link to device script which will run after page loads-->
+
+

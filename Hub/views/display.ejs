@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/media/logo/t-icon.png"> <!-- webpage icon -->
+    <link rel="stylesheet" href="css/global.css"> <!-- import CSS code -->
+    <link rel="stylesheet" href="css/displayPage.css">
+    
+    <script src="js/global.js" defer></script> <!-- import JS code -->
+    <script src="js/displayPage.js" defer></script>
+    <script src="https://kit.fontawesome.com/69e3c818f0.js" crossorigin="anonymous"></script>
+    <title>HomeShield Hub</title> <!-- webpage title -->
+</head>
+<body>
+    <div class="centrePage">
+        <object id="l" data="media/logo/svgs/zoomed-text+icon.svg"> </object>
+        <% if (title) { %> <!-- checks if title has been defined otherwise leaves this element out -->
+            <label id="titleLabel" class="titleText"> <%- title %> </label> <!-- set title -->
+        <% } %>
+        <% if (text) { %> <!-- checks if text has been defined otherwise leaves this element out -->
+            <label id="textLabel" class="normalText"> <%- text %> </label> <!-- set text -->
+        <% } %>
+        <button id="homeButton" 
+        class="mainButtonStyle"
+        onclick="returnButtonClick()"
+        ><i class="iconSpaceR fa-solid fa-chevron-left"></i>Return</button> <!-- return button -->
+    </div>
+</body>
+</html>
+
+
