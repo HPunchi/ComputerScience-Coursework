@@ -1,0 +1,101 @@
+<label class="pageHeading">Manage Account</label> <!-- page heading -->
+
+<div id="details" data-details="<%= JSON.stringify(accountDetails) %>" class="ttb"> <!-- store the entire object as a string in details data object-->
+    <div class="fieldRow">
+        <label class="cdR">Name:</label> 
+        <label id="deName" data-value="Name" onclick="editDetail(this.dataset.value)" class="attr"><%= accountDetails.name %></label> <!-- display -->
+        <div id="cdNameEB" class="editBar" style="display:none"> 
+            <input class="coreDetails editInp" placeholder="<%= accountDetails.name %>">
+        </div>
+    </div>
+    <div class="fieldRow">
+        <label class="cdR">Email address:</label> <!-- email address of user-->
+        <label class="attr"><%= accountDetails.email %></label> <!-- display -->
+        <!-- non-edittable hence no input DIV -->
+    </div>
+</div>
+
+<% if (accountDetails.emergencyContacts) { %> <!-- only load the sections below if the user has any emergency contacts added -->
+    <div id="emergencyContacts" class="ttb">
+        <label id="ecHeading">Emergency Contacts</label> <!-- sub heading -->
+        <% for( let i=0; i<accountDetails.emergencyContacts.length; i++ ) { %> <!-- run the code below for every contact -->
+            <div id="<%= accountDetails.emergencyContacts[i].contactID %>" class="contactPad"> <!-- create contact pad (main DIV) -->
+                <label  class="contactNumber"><%= `${i+1}`%></label> 
+                <div class="emergencyContactData"> 
+                    <div class="fieldRow">
+                        <label class="ecFn"> Name:</label> 
+                        <label id="deContact<%= (i+1).toString() %>Name" data-value="Contact<%= (i+1).toString() %>Name" onclick="editDetail(this.dataset.value)" class="ecD"><%= accountDetails.emergencyContacts[i].name %></label>
+                        <div id="cdContact<%= (i+1).toString() %>NameEB" class="editBar" style="display:none"> 
+                            <input class="coreDetails editInp" placeholder="<%= accountDetails.emergencyContacts[i].name %>">
+                        </div>
+                    </div>
+                    <div class="fieldRow">
+                        <label class="ecFn">Email address:</label> 
+                        <label id="deContact<%= (i+1).toString() %>Email" data-value="Contact<%= (i+1).toString() %>Email" onclick="editDetail(this.dataset.value)" class="ecD"><%= accountDetails.emergencyContacts[i].email %></label>
+                        <div id="cdContact<%= (i+1).toString() %>EmailEB" class="editBar" style="display:none"> 
+                            <input class="coreDetails editInp" placeholder="<%= accountDetails.emergencyContacts[i].email %>">
+                        </div>
+                    </div>
+                </div>
+                <div class="contactDelDIV"> <!-- div to store delete contact button-->
+                    <button data-v="<%= (i+1).toString() %>" title="Remove Contact" onclick="removeContact(this.parentNode.parentNode.id)" class="delContact">
+                        <i class="fa-solid fa-x"></i></button> <!-- x button alongside each contact to delete a specific contact -->
+                </div>
+            </div> 
+        <% } %>
+    </div>
+<% } %>
+<div id="contactAdd" class="ttb" style="display: none;"> <!-- form to add a contact - shown when button is pressed -->
+    <label id="ecHeading">Add Contact</label> <!-- heading -->
+    <div class="fieldRow">
+        <label class="cdR">Name:</label>
+        <input id="newContactName" class="editInp"> <!-- input for the name of the new contact -->
+    </div>
+    <div class="fieldRow">
+        <label class="cdR">Email address:</label> 
+        <input id="newContactEmail" class="editInp"> <!-- input for the email of the new contact -->
+    </div>
+    <div id="adBtns" class="btnRow"> <!-- button row for forkm-->
+        <button id="cancelPWDbtn" onclick="cancelContactAdd()" class="btnAP">Cancel</button> <!-- cancel the add contact operation -->
+        <button id="submitPWDbtn" onclick="addContact()" class="btnAP">Submit</button> <!-- submit details and add new contact -->
+    </div>
+</div>
+
+<div id="passwordChange" class="ttb" style="display: none;"> <!-- form for password change - shown when button is pressed -->
+    <label id="ecHeading">Change Password</label> <!-- heading -->
+    <div class="fieldRow">
+        <label class="cdR">Old Password:</label>
+        <input id="oldPassword" type="text" class="editInp"> <!-- input old password -->
+    </div>
+    <div class="fieldRow">
+        <label class="cdR">New Password:</label>
+        <input id="newPassword" type="text" class="editInp"> <!-- input new password -->
+    </div>
+    <div class="fieldRow">
+        <label class="cdR">Confirm:</label>
+        <input id="cPassword" type="text" class="editInp"> <!-- input to confirm new password -->
+    </div>
+    <div id="pwdBtns" class="btnRow"> <!-- button row for form -->
+        <button id="cancelContactBtn" onclick="cancelPWDChange()" class="btnAP">Cancel</button> <!-- cancel the password change operation -->
+        <button id="submitContactBtn" onclick="changePassword()" class="btnAP">Submit</button> <!-- submit details and change password -->
+    </div>
+</div>
+
+
+<div id="accountButtons" class="btnRow"> <!-- row of buttons for main operations -->
+    <button id="editBtn" onclick="plainEdit()"
+    class="btnAP">Edit Details<i class="iconSpaceL fa-solid fa-pencil"></i></button> <!-- button to make a plain edit (no prior selections)-->
+    <button id="sEditBtn" onclick="editDetails()" style="display: none;" 
+    class="btnAP editSetMode">Set Edits<i class="iconSpaceL fa-solid fa-pencil"></i></button> <!-- button to set the edits made on the inputs -->
+    <button id="addContactBtn" onclick="triggerContactAdd()" 
+    class="btnAP">Add Contact<i class="iconSpaceL fa-solid fa-user"></i></button> <!-- button to display the contact add form -->
+    <button id="pchangeBtn" onclick="triggerPWDChange()" 
+    class="btnAP">Change Password<i class="iconSpaceL fa-solid fa-lock"></i></button> <!-- button to display the password change form -->
+    <button id="delAccount" onclick="deleteAccount()" 
+    class="btnAP">Delete Account<i class="iconSpaceL fa-solid fa-trash"></i></button> <!-- button to delete account -->
+</div>
+<script src="/js/account.js" defer></script> <!-- link client side JS -->
+
+
+
+

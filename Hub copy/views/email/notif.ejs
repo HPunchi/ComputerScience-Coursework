@@ -1,0 +1,24 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- apply scaling to variously sized screens -->
+<style>
+    body{
+        font-family: 'Trebuchet MS', sans-serif; /* consistent font use */
+    }
+    p{
+        margin-bottom: 0px;
+    }
+</style> <!-- incorporated style tag kept within the EJS file (as other paths cannot be referenced as this file is fully independent)-->
+<div class="main"> <!-- main div -->
+    <div class="content"> <!-- content div -->
+        <% if (typeof contactName !== 'undefined') { %> <!-- add text below if the email is to an emergency contact -->
+            <p>Dear <%= contactName %>,</p> <!-- add in contact's name and name of device owner where appropiate -->
+            <p>As an added emergency contact of <%= name %>, you are recieving this notifiation with regards to <%= name %>'s home security system. Review the details below and take prompt and appropiate action.</p>
+        <% } else { %> <!-- otherwise add text below (if email is to direct user) - i.e. contactName is not defined in object -->
+            <p>Dear <%= name %>,</p> <!-- add name of user in the top line-->
+            <p>You are recieving this notifiation with regards to your home security system. Review the details below and take prompt and appropiate action.</p>
+        <% } %>            
+        <!-- description of event below -->
+        <p>Event: <%= eventName %></p> <!-- name of event (e.g. Motion Detected)-->
+        <p>Device Location: <%= deviceLocation %></p> <!-- location of device that recorded the event -->
+        <p>Time: <%= eventTime %></p> <!-- time that the event occured-->
+    </div>
+</div>

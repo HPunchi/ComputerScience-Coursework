@@ -1,0 +1,527 @@
+body{
+    font-family: 'Trebuchet MS', sans-serif;
+}
+object{
+    cursor: pointer;
+}
+button{ /* shows cursor icon when hovering above a button */
+    cursor: pointer;
+}
+.pageHeading{ /* centres and sizes the page heading */
+    text-align: center;
+    font-size: 1.6rem;
+}
+.divRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-left: 5px;
+}
+.mainButtonStyle{ /* defines position and styling for a main button */
+    color: #fff;
+    background-color: #00a2ff;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    font-size: 1.15rem;
+    width: 120px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.smaller{
+
+    font-size: 0.5rem;
+}
+.standardButton{ /* standard button style with automatic width based on content */
+    color: #fff;
+    background-color: #00a2ff;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 35px;
+    font-size: 0.9em;
+}
+.linkButtonStyle{ /* defines style for buttons that link to other pages */
+    color: #3a3a3a;
+    text-decoration: underline;
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.inputLabelStyle{ /* defines style for labels above inputs */
+    color: black;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.ttb{ /* class to arrange elements vertically whilst horizontally being in the centre */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.inputFieldStyle{ /* defines style for all input fields */
+    color: black;
+    height: 30px;
+    width: 280px;
+    outline: none;
+    border-radius: 3px;
+    border: solid;
+    font-size: 1.08rem;
+    border-width: 1.5px;
+}
+.centreY{
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+}
+.centreXY{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.addFieldsBtn{
+    background-color: #ededed;
+    width: 160px;
+    color: rgb(42, 42, 42);
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 5px;
+
+
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.midPageLogo{ /* class to position and size logo */
+    width: 300px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+.titleText{ /* text to be used on the title */
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.normalText{ /* normal text sizing */ 
+    font-size: 1.1rem;
+}
+
+.headerBar{ /* main header bar colours and dimensions/positioning */
+    height: 50px;
+    width: 100%;
+    margin: 0px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    border-bottom: 1px solid grey;
+    background-color: white;
+    z-index: 5;
+}
+.headerContents{ /* global dimensions and display settings for headers */
+    position: absolute;
+    height: 100%;
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.headerLogo{ /* sizing and effects on header logo link */
+    height: 100%;
+    z-index: -100;
+    cursor: pointer;
+}
+#mainContainer{ /* positioning/layout of main area on template */
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: 55px;
+}
+
+.heading{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #e1e1e1;
+    z-index: 10;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a4a4a4;
+    border-radius: 6px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #545454;
+  }
+
+ #main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ 
+
+
+.btnRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btnRow, button{
+    margin: 5px;
+}
+.statusLabel{
+    width: 15px;
+    height: 15px;
+    border-radius: 45px;
+
+    border: 1px solid #545454;
+    background-color: #ededed;
+    outline: none;
+}
+
+.iconSpaceL{/* 10px margin on left */
+    margin-left: 10px;
+}
+.iconSpaceR{ /* 10px margin on right */
+    margin-right: 10px;
+}
+.checked{ 
+    background-color: #545454;
+}
+.checkBoxAD{
+    background-color: #00a2ff;
+}
+
+
+.selectedRow{
+    background-color: red;
+}
+
+.ccPageBtn{
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.tblBtn {
+    width: 85px;
+}
+
+.armed{ /* color settings when armed - red */
+    background-color: red;
+}
+.idle{ /* color setting when idle - blue */
+    background-color: #00a2ff;
+}
+
+#connectionList{ /* maxmium width of window size with 10px on either side */
+    max-width: calc(100%-20px);
+}
+
+.commandIcon{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: #383838;
+    cursor: pointer;
+}
+
+.commandIcon:hover{
+    color: #1b1b1b;
+}
+
+
+
+.btnRow{
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+}
+
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
+
+.editBar{
+    display: flex;
+    flex-direction: row; 
+}
+.editInp{
+    font-size: 1.1rem;
+    height: 23px;
+    width: 180px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid black;
+}
+
+
+.contactPad{
+    width: auto;
+    height: 90px;
+}
+
+
+.cnDiv{
+    background-color: red;
+   
+    width: 20px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.contactPad{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.contactNumber{
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.container { /* enable flex grid positioning for device list and bounds for space */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Adjust the gap between boxes */
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(100%-20px);
+}
+
+.cBox {
+    position: relative;
+    width: 250px;
+    height: 190px;
+    margin: 10px;
+    border: 1px solid #424242;
+    box-sizing: border-box;
+    background-color: white;
+}
+.box { /* dimensions, margin, and border settings of box */
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 1px solid #424242;
+    box-sizing: border-box;
+    background-color: white;
+}
+.dPadLocation{ /* largest font size and weight in device pad for importance */
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.dPadName{ /* second largest font size in device pad */
+    font-size: 1.15rem;
+}
+.select-button { /* define relative positioning, shape and size for select button*/
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(224, 224, 224);
+    border: none;
+    cursor: pointer;
+}
+.online{
+    color: rgb(0, 255, 0);
+}
+
+.offline{
+    color: rgb(255, 0, 0);
+}
+
+
+
+.unavailable{
+    color: rgb(224, 224, 224);
+}
+
+.uecStatIcon{
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.7rem;
+}
+
+.uecStatText{
+    font-size: 1.1rem;
+}
+.SBon{
+    background-color: #00a2ff;
+}
+.deviceIcon{
+    color: #272727;
+    font-size: 3.5rem;
+}
+
+.deviceStat{ /* device status element sizing and margin from right */
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-right: 20px;
+}
+.dBoxSelect{ /* border colour when selected */
+    border: 2px solid #00a2ff;
+}
+.dIcons{ /* arrangement of device icons for visibility and lock */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.cIcons{ /* show command icons inside a connection pad in a row positoned on the left */
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.cIcon{ /* set size of each command icon to 1.4rem and leave a 20px margin space to the right of it */
+    font-size: 1.4rem;
+    margin-right: 20px;
+}
+.dType{
+    font-size: 0.95rem;
+}
+
+.noGap{
+    margin-left: 0px;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px){
+    .btnRow{
+        flex-direction: column;
+    }
+    #buttonsDiv{
+        flex-direction: column;
+    }
+ 
+    .box{
+        flex: 0 0 300px;
+    }
+    .divRow{
+        flex-direction: column;
+        margin: 0;
+    }
+    
+    #elContainer, #defaultIconDiv{
+        width: 100%;
+    }
+}
+
+#connectionList{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.dropdownZone{
+    height: 30px;
+    width: auto;
+    margin-right: 15px;
+    z-index: 1000;
+    background-color: white;
+}
+
+
+#elSettings{
+    margin-left: 0px;
+    margin-bottom: 5px;
+}
+
+
+
+.dd-options{ /* hide by default */
+    display: none;  
+}
+
+.ddOption{ /* show option in a row */
+    display: flex;
+    flex-direction: row;
+}
+
+
+.dropdownIcon{ /* make downwards chevron icon a smaller than default */
+    font-size: 0.9rem;
+}
+
+#filterBox{ /* define margin and sizing for area for filter options */
+    height: auto;
+    width: 100%;
+    margin-bottom: 5px;
+    margin-left: 0px;
+}
+
+#filterCriteria{ /* negative left margin (left shift) */
+    margin-left: -5px;
+}
+
+.filterCrit{ /* shape and properties of filter criteria box */
+    height: 25px;
+    width: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid black;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+#countryCode {
+    padding: 8px;
+    margin-right: 8px;
+}
+
+/* Container to hold the dropdown and input */
+.phone-input-container {
+    display: flex;
+    align-items: center;
+}
+
+#cpick{
+    width: 50px;
+}
+
+input[type="tel"] {
+    flex: 1;/* Take up remaining space in the container */
+    padding: 8px;
+}
+
+#phoneInp #nameInp{
+    font-size: 1.75rem;
+}
+

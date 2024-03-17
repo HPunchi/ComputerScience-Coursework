@@ -1,0 +1,13 @@
+GET http://localhost/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidXNlcjIiLCJpYXQiOjE2OTg4MzAwMjZ9.16ajma1DCSTIF_dMH6q3mJto5kGEwEgPAOmT_6kUTtU
+
+###
+
+POST http://localhost/login
+Content-Type: application/json
+
+{
+    "username": "user2"
+}
+
+

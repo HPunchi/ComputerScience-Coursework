@@ -1,0 +1,19 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- apply scaling to variously sized screens -->
+<style>
+    body{
+        font-family: 'Trebuchet MS', sans-serif; /* consistent font use */
+    }
+    p{
+        margin-bottom: 0px;
+    }
+</style> <!-- incorporated style tag kept within the EJS file (as other paths cannot be referenced as this file is fully independent)-->
+<div class="main"> <!-- main div -->
+    <div class="content"> <!-- content div -->
+        <p>Dear <%= name %>,</p> <!-- add in contact's name and name of device owner where appropiate -->
+        <p>This email from HomeShield is to notify you that one of your armed devices has lost connection to our server. Review the details below and take prompt and appropiate action.</p>
+        <!-- description of event below -->
+        <p>Event: Connection Lost</p> 
+        <p>Device Location: <%= location %></p> 
+        <p>Last connected: <%= date %> at <%= time %></p> 
+    </div>
+</div>

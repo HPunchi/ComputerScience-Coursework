@@ -1,0 +1,47 @@
+<script src="/js/addDevice.js" defer></script> <!-- client side JS script to run once webpage is loaded-->
+<div id="main"> <!-- main div that will be horizontally centred like all other forms -->
+    <label id="mainPgTitle" class="pageHeading">Add Device</label> <!-- page heading-->
+    <div id="addDeviceForm" class="ttb" style="display:flex;"> <!-- form for new device data entry -->
+        <label class="inputLabelStyle ad">Fill in the fields below:</label> <!-- text input prompt -->
+        <input id="locationInput" class="inputFieldStyle" placeholder="Location"> <!-- device location text input -->
+        <input id="devicenameInput" class="inputFieldStyle" placeholder="Device Name"> <!-- device name text input -->
+        <label class="inputLabelStyle ad">Type of device:</label> <!-- radio input prompt -->
+        <div id="typeRadioSet" class="ttb"> <!-- div to store all options for device type-->
+            <% for( i=0; i<deviceTypes.length; i++ ) { %> <!-- iterate through array containing all device types -->
+                <label> <!-- label object for each device type -->
+                    <input name="type" class="r" 
+                    id="<%= deviceTypes[i].toLowerCase() %>"
+                    value="<%- deviceTypes[i] %>"
+                    type="radio">
+                    <%= deviceTypes[i] %> <!-- radio type input for current option and setting of id and value -->
+                </label>
+            <% } %>
+        </div>
+        <label class="inputLabelStyle ad">Choose to enable the following features:</label> <!-- checkbox input prompts -->
+        <label>
+            <input name="extra" class="checkBoxAD" id="vis" type="checkbox">Visibility      <!-- visibility setting checkbox -->
+        </label>
+        <label>
+            <input name="extra" class="checkBoxAD" id="lock" type="checkbox">Lock Device    <!-- device lock setting checkbox -->   
+        </label> 
+        <div class="btnRow"> <!-- button row -->
+            <button id="backBtn" onclick="back()" class="standardButton">Back</button> <!-- button to go back to devices page-->
+            <button id="submitDetails" onclick="makeUEC()" class="standardButton">Submit</button> <!-- button to proceed to next stage of adding device -->
+        </div>
+    </div> 
+    <div id="enterPINForm" class="ttb" style="display:none;"> <!-- new form for UEC display and security PIN entry (hidden by default at start)-->
+        <label class="inputLabelStyle ad">
+            The unique enrollment code (UEC) for this device is: <!-- display prompt -->
+        </label> 
+        <label id="uecLabel" class="pageHeading">Unavailable</label> <!-- placeholder element to be filled with UEC (displays 'unavailable' if no UEC can be found)-->
+        <label class="inputLabelStyle ad"> 
+            Use this and enter the 4 digit security PIN provided: <!-- further instructions to user -->
+        </label>
+        <input id="securityPIN" class="inputFieldStyle"
+        placeholder="Security PIN" type="number"> <!-- numerical input field for security PIN-->
+        <div class="btnRow"> <!-- button row -->
+            <button id="back1Btn" onclick="back1()" class="standardButton">Back</button> <!-- button to go back to first data entry form -->
+            <button id="addDeviceBtn" onclick="verifySecurityPIN()" class="standardButton">Add Device</button> <!-- button to verify PIN and add device-->
+        </div>
+    </div>
+</div>

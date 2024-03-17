@@ -1,0 +1,9 @@
+npm init
+npm install nodemon     //development and testing
+npm install express     //server
+npm install body-parser       //request data interpretor
+npm install ejs     //server side rendered
+npm install dotenv      //.env file reading 
+npm install mysql2      //database access and interactions
+
+
